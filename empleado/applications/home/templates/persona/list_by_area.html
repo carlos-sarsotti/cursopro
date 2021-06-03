@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% include 'includes/header.html' %}
+<div class="grid-container">
+    <div class='grid-x'>
+        <h1 class='cell'>Lista Empleados por Departamentos</h1>
+        <div class='cell  large-10'>
+        <table>    
+            <thead>
+                <tr>
+                    <th width="20">ID</th>
+                    <th width="150">NOMBRE</th>
+                    <th width="150">APELLIDO</th>
+                    <th width="400">DEPARTAMENTO</th>
+                  </tr>
+            </thead>
+            <tbody>
+                {%for e in empleados %}  
+                <tr>
+                    <td>{{ e.id }}</td>
+                    <td>{{ e.first_name }}</td>
+                    <td>{{ e.last_name }}</td>
+                    <td>{{ e.departamento}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+      </div>        
+    </div>
+</div>
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>Hola Mundo 29</h1>
+
+<ul>
+{%for e in object_list %}
+<li>{{ e }}</li>
+{% endfor %}
+</ul>

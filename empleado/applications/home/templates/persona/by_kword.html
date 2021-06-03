@@ -1,0 +1,12 @@
+<h1>Hola Mundo 31</h1>
+
+<form method="get">{% csrf_token %}
+    <input type="text" id="kword" name="kword" placeholder="Ingrese nombre">
+    <button type="submit">Buscar</button>
+</form>    
+<h3>Lista Resultado</h3>
+<ul>
+    {%for e in empleado %}
+    <li>{{ e }}</li>
+    {% endfor %}
+ </ul>

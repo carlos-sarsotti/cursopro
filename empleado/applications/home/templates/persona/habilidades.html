@@ -1,0 +1,12 @@
+<h1>Hola Mundo 32</h1>
+
+<form method="get">{% csrf_token %}
+    <input type="text" id="hability" name="hability" placeholder="Ingrese Habilidades">
+    <button type="submit">Buscar</button>
+</form>    
+<h3>Lista Resultado</h3>
+<ul>
+    {%for e in habilidades %}
+    <li>{{ e }}</li>
+    {% endfor %}
+ </ul>

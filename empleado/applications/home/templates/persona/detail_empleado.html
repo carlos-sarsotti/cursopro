@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Registro Departamento {% endblock title %}
+
+{% block content %}
+
+{% include 'includes/header.html' %}
+
+<div class="grid-container">
+    <div class="grid-x callout grid-margin-x align-center">
+        <h1 class="cell">
+            Registro Departamento
+        </h1>
+        <div class="cell large-4 card" style="width: 300px;">
+          <div class="card-divider">
+            {{empleado.get_job_display}}
+          </div>
+          {% if empleado.avatar %}
+            <img src="{{ empleado.avatar.url}}">
+          {% else %}
+            <img src="{% static 'img/calculadora.jpg' %}">
+          {% endif %}
+            <div class="card-section">
+                <h4>{{empleado.full_name}}</h4>
+                <p>{{empleado.departamento.shor_name}}</p>
+                <p><span class="label">Habilidades:</span></p>
+                <ul class="vertical menu">
+                    {% for h in empleado.habilidades.all %}
+                        <li>{{ h.habilidad}}</li>
+                    {% endfor %}
+                </ul>
+            
+            <div>
+    </div>
+</div>
+
+{% endblock content %}
